@@ -5,7 +5,6 @@ require 'pry'
 # 
 ########################################################################
 class Game
-	@@array_of_game_players = []
 
 	def initialize
 		puts "-----------------------------"
@@ -19,7 +18,7 @@ class Game
 	def initialize_players
 		@player1 = Player.new("x")
 		@player2 = Player.new("o")
-		@@array_of_game_players = [@player1, @player2]
+		@array_of_game_players = [@player1, @player2]
 	end
 
 	def turn_of(player)
@@ -93,7 +92,7 @@ class Game
 		go_to_end_game = false
 		loop do
 			break if go_to_end_game
-			@@array_of_game_players.each do |player|
+			@array_of_game_players.each do |player|
 				turn_of(player)
 				@board.display_board
 				if game_over
@@ -113,7 +112,7 @@ end
 # 
 ########################################################################
 class Player
-	@@array_of_players = []
+	@array_of_players = []
 	def initialize(symbol = "")
 		puts 'Tape ton nom suivi de la touche entrée'
 
@@ -126,11 +125,11 @@ class Player
 		puts "\n"
 
 		@player_hash = {id: player_id, name: player_name, symbol: symbol}
-		@@array_of_players << @player_hash
+		Player.array_of_players << @player_hash
 	end
 
 	def set_id
-		return @@array_of_players.count + 1
+		return Player.array_of_players.count + 1
 	end
 
 	def get_name
@@ -154,7 +153,7 @@ class Player
 	end
 
 	def self.array_of_players
-		return @@array_of_players
+		return @array_of_players
 	end
 end
 ########################################################################
