@@ -6,3 +6,5 @@ C'est la version que j'avais réalisée lorsque j'étais à votre place et qui a
 La version de référence la plus sérieuse étant sûrement celle de Zaratan :
 https://github.com/denispasin/tictactoe_thp
 
+Suite à la suggestion de Zaratan et à la lecture de cette ressource, le deuxième commit retire les variables de classe :
+http://iacobson.net/beware-of-ruby-class-variables/
