@@ -90,17 +90,20 @@ class Game
 		initialize_players
 		@board = Board.new
 		go_to_end_game = false
-		loop do
-			break if go_to_end_game
-			@array_of_game_players.each do |player|
-				turn_of(player)
-				@board.display_board
-				if game_over
-					go_to_end_game = true
-					break
+		# catch :go_to_end_game do
+			loop do
+				break if go_to_end_game
+				@array_of_game_players.each do |player|
+					turn_of(player)
+					@board.display_board
+					# throw :go_to_end_game if game_over
+					if game_over
+						go_to_end_game = true
+						break
+					end
 				end
 			end
-		end
+		# end
 		end_game
 	end
 end
@@ -192,5 +195,5 @@ class Board
 end
 ########################################################################
 
-
+binding.pry
 Game.new.play

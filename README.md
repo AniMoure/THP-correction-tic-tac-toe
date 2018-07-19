@@ -8,3 +8,5 @@ https://github.com/denispasin/tictactoe_thp
 
 Suite à la suggestion de Zaratan et à la lecture de cette ressource, le deuxième commit retire les variables de classe :
 http://iacobson.net/beware-of-ruby-class-variables/
+
+La version en single_class est donnée à titre de comparaison.
